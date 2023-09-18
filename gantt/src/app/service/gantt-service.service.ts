@@ -214,7 +214,7 @@ const resourceAssignments: ResourceAssignment[] = [{
 }];
 
 @Injectable()
-export class Service {
+export class GanttServiceService {
   getTasks(): Task[] {
     return tasks;
   }
