@@ -1,10 +1,31 @@
-.widget-container{
-  width: 100%;
+.header{
+  height: 7%;
 }
-//dx-gantt{
-//  max-width: 95%;
-//  margin: 30px 30px;
-//}
+.createSpace{
+  height: 10%;
+}
+.title{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 7%;
+  text-align: left;
+margin-left: 30px;
+  margin-right: 30px;
+  font-size: 28px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: gray;
+}
+.body{
+  margin: 30px 30px;
+  max-height: 68%;
+  background-color: #f0efeb;
+  overflow: auto;
+}
+.widget-container{
+  padding: 30px 30px;
+}
+
 
 .custom-task-color-0 {
   background-color: #5c57c9;

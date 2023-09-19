@@ -26,7 +26,7 @@ export class TaskTemplateComponent {
   }
 
   getImagePath(taskId: number) {
-    const imgPath = 'images/employees';
+    const imgPath = 'gantt/src/assets/image/employees';
     let img = taskId < 10 ? `0${taskId}` : taskId;
     img = `${imgPath}/${img}.png`;
     return img;

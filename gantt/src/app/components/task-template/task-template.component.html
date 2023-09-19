@@ -7,12 +7,19 @@
 </head>
 
 <body>
+<div class ="header">
+  <app-navbar></app-navbar>
+</div>
+<div class="createSpace"></div>
+<div class="title">
+  Darstellung des Aufgabenflusses und der Abhängigkeiten zwischen den Aufgaben
+</div>
 
-
+<div class="body">
 <div id="demo-container">
   <div class="widget-container">
     <dx-gantt
-      height="500"
+      height="430"
       scaleType="days"
       taskContentTemplate="taskContentTemplate"
     >
@@ -62,6 +69,7 @@
       </div>
     </dx-gantt>
   </div>
+</div>
 </div>
 </body>
 </html>
