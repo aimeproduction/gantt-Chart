@@ -1,0 +1,22 @@
+.mat-toolbar{
+  background: #8391a8;
+  color: white;
+  height: 50px;
+}
+.active{
+  background-color: darkslategray;
+}
+
+
+.welcome{
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+}
+.new-book{
+  margin-left: 30%;
+  font-size: 18px;
+}
+.new-book1, .new-book2{
+  font-size: 18px;
+}

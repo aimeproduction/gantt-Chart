@@ -14,8 +14,9 @@ export class Task {
 
   end!: Date;
 
-  progress!: number;
+  progress?: number;
 }
+
 
 export class Dependency {
   id!: number;
@@ -108,6 +109,129 @@ const tasks: Task[] = [{
   end: new Date(year, month, 28),
   progress: 0,
 }];
+
+
+
+const tasks1: Task[] = [{
+  id: 1,
+  parentId: 0,
+  title: 'Kunden',
+  start: new Date(year, month, 1),
+  end: new Date(year, month, 28),
+}, {
+  id: 2,
+  parentId: 1,
+  title: 'Kunde 1',
+  start: new Date(year, month, 1),
+  end: new Date(year, month, 3),
+}, {
+  id: 3,
+  parentId: 1,
+  title: 'Kunde 2',
+  start: new Date(year, month, 3),
+  end: new Date(year, month, 5),
+}, {
+  id: 4,
+  parentId: 1,
+  title: 'Kunde 3',
+  start: new Date(year, month, 4),
+  end: new Date(year, month, 6),
+}, {
+  id: 5,
+  parentId: 1,
+  title: 'Kunde 4',
+  start: new Date(year, month, 6),
+  end: new Date(year, month, 8),
+}, {
+  id: 6,
+  parentId: 2,
+  title: 'Auftrag 1',
+  start: new Date(year, month, 1),
+  end: new Date(year, month, 24),
+}, {
+  id: 7,
+  parentId: 2,
+  title: 'Auftrag 2',
+  start: new Date(year, month, 4),
+  end: new Date(year, month, 20),
+}, {
+  id: 8,
+  parentId: 2,
+  title: 'Auftrag 3',
+  start: new Date(year, month, 2),
+  end: new Date(year, month, 30),
+}, {
+  id: 9,
+  parentId: 6,
+  title: 'Details 1',
+  start: new Date(year, month, 4),
+  end: new Date(year, month, 15),
+},
+  {
+    id: 10,
+    parentId: 6,
+    title: 'Details 2',
+    start: new Date(year, month, 2),
+    end: new Date(year, month, 20),
+  },
+  {
+    id: 11,
+    parentId: 7,
+    title: 'Detail 1',
+    start: new Date(year, month, 13),
+    end: new Date(year, month, 22),
+  },
+  {
+    id: 12,
+    parentId: 3,
+    title: 'Auftrag 1',
+    start: new Date(year, month, 4),
+    end: new Date(year, month, 27),
+  },
+  {
+    id: 13,
+    parentId: 3,
+    title: 'Auftrag 2',
+    start: new Date(year, month, 12),
+    end: new Date(year, month, 18),
+  },
+  {
+    id: 14,
+    parentId: 13,
+    title: 'Detail 1',
+    start: new Date(year, month, 13),
+    end: new Date(year, month, 18),
+  },
+  {
+    id: 15,
+    parentId: 4,
+    title: 'Auftrag 1',
+    start: new Date(year, month, 5),
+    end: new Date(year, month, 20),
+  },
+  {
+    id: 16,
+    parentId: 15,
+    title: 'Detail 1',
+    start: new Date(year, month, 8),
+    end: new Date(year, month, 18),
+  },
+  {
+    id: 17,
+    parentId: 5,
+    title: 'Auftrag 1',
+    start: new Date(year, month, 10),
+    end: new Date(year, month, 28),
+  },
+  {
+    id: 18,
+    parentId: 17,
+    title: 'Detail 1',
+    start: new Date(year, month, 17),
+    end: new Date(year, month, 23),
+  }
+
+];
 
 const dependencies: Dependency[] = [{
   id: 1,
@@ -214,9 +338,13 @@ const resourceAssignments: ResourceAssignment[] = [{
 }];
 
 @Injectable()
-export class Service {
+export class GanttServiceService {
   getTasks(): Task[] {
     return tasks;
+  }
+
+  getTasks1(): Task[] {
+    return tasks1;
   }
 
   getDependencies(): Dependency[] {
